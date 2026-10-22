@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shihari Ayodya | Aspiring Software Developer</title>
+  <meta name="description" content="Portfolio of Shihari Ayodya, an Information Systems undergraduate specializing in software development and data solutions." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#home" class="font-bold text-xl accent-text">Shihari</a>
+
+      <nav class="hidden md:flex gap-6">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle dark mode" class="icon-btn">🌓</button>
+        <button id="menu-btn" aria-label="Open menu" aria-expanded="false" class="icon-btn md:hidden">☰</button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4" style="border-top:1px solid var(--border)">
+      <a href="#about" class="block py-2 nav-link">About</a>
+      <a href="#skills" class="block py-2 nav-link">Skills</a>
+      <a href="#projects" class="block py-2 nav-link">Projects</a>
+      <a href="#achievements" class="block py-2 nav-link">Achievements</a>
+      <a href="#contact" class="block py-2 nav-link">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero-glow">
+      <div class="max-w-6xl mx-auto px-4 py-20 md:py-32 text-center flex flex-col items-center">
+        <div class="avatar mb-6">SA</div>
+        <span class="chip mb-4">Open to internships</span>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Shihari Ayodya</h1>
+        <p class="text-lg md:text-2xl muted max-w-2xl mb-8">
+          Aspiring Software Developer &amp; Data Enthusiast building responsive web apps and turning data into insights.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="bg-alt">
+      <div class="max-w-6xl mx-auto px-4 py-16 reveal">
+        <h2 class="section-title">About Me</h2>
+        <p class="max-w-3xl muted mb-4">
+          I'm an Information Systems undergraduate at the Faculty of Computing, Sabaragamuwa University of Sri Lanka,
+          specializing in software development and data solutions. I build responsive web applications with React.js,
+          Python/Flask, and Node.js, and I enjoy designing intuitive interfaces, integrating RESTful APIs, and working
+          with data pipelines.
+        </p>
+        <p class="max-w-3xl muted mb-6">
+          Beyond coding, I'm a Club Designer at the Rotaract Club of SUSL and Sabra Leos, and I run a small handmade crochet
+          business. I'm currently looking for a Software Development internship where I can contribute to scalable systems
+          and keep growing as a developer.
+        </p>
+        <a href="assets/Shihari-Ayodya-CV.pdf" download class="btn-outline">Download Resume</a>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="max-w-6xl mx-auto px-4 py-16 reveal">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="card p-4 text-center">React.js</div>
+        <div class="card p-4 text-center">Python / Flask</div>
+        <div class="card p-4 text-center">Node.js</div>
+        <div class="card p-4 text-center">HTML &amp; CSS</div>
+        <div class="card p-4 text-center">MySQL</div>
+        <div class="card p-4 text-center">PostgreSQL</div>
+        <div class="card p-4 text-center">Firebase</div>
+        <div class="card p-4 text-center">SQL</div>
+        <div class="card p-4 text-center">Python (Pandas)</div>
+        <div class="card p-4 text-center">Power BI</div>
+        <div class="card p-4 text-center">Excel</div>
+        <div class="card p-4 text-center">Google Colab</div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="bg-alt">
+      <div class="max-w-6xl mx-auto px-4 py-16 reveal">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <article class="card overflow-hidden">
+            <div class="h-40" style="background:linear-gradient(135deg,#bae6fd,#64748b)"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">Scholar-Track</h3>
+              <p class="text-sm muted mb-4">Task management system that extracts tasks from academic documents using OCR and NLP.</p>
+              <button data-project="0" class="accent-text font-medium hover:underline">View details →</button>
+            </div>
+          </article>
+
+          <article class="card overflow-hidden">
+            <div class="h-40" style="background:linear-gradient(135deg,#7dd3fc,#94a3b8)"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">PetCare.lk</h3>
+              <p class="text-sm muted mb-4">Pet adoption and care platform with lost-and-found, vet directory, and English/Sinhala support.</p>
+              <button data-project="1" class="accent-text font-medium hover:underline">View details →</button>
+            </div>
+          </article>
+
+          <article class="card overflow-hidden">
+            <div class="h-40" style="background:linear-gradient(135deg,#a5d8f3,#475569)"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">Crochet Showcase &amp; Order System</h3>
+              <p class="text-sm muted mb-4">Product showcase where customers browse items and send a pre-filled WhatsApp order.</p>
+              <button data-project="2" class="accent-text font-medium hover:underline">View details →</button>
+            </div>
+          </article>
+
+          <article class="card overflow-hidden">
+            <div class="h-40" style="background:linear-gradient(135deg,#38bdf8,#9ca3af)"></div>
+            <div class="p-5">
+              <h3 class="text-xl font-semibold mb-2">Sri Lanka Tourism Data Analysis</h3>
+              <p class="text-sm muted mb-4">Analysis of 2023 to 2025 tourist arrivals using Python, MySQL, and Power BI.</p>
+              <button data-project="3" class="accent-text font-medium hover:underline">View details →</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements" class="max-w-6xl mx-auto px-4 py-16 reveal">
+      <h2 class="section-title">Achievements &amp; Leadership</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="card p-5">
+          <h3 class="font-semibold mb-1">🏆 Top 30, Data Storm 7.0</h3>
+          <p class="text-sm muted">University of Moratuwa × OCTAVE, John Keells Group. Team WeCodeX placed in the top 30 of a 36-hour data science hackathon solving a real-world industry problem.</p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold mb-1">🏆 Top 15 Finalist, CryptX 2.0</h3>
+          <p class="text-sm muted">University of Sri Jayewardenepura, ICT Society. Team WeCodeX was selected among the top 15 finalist teams.</p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold mb-1">🌊 Rotaract Club of SUSL</h3>
+          <p class="text-sm muted">Club Designer (2025 to present). Project Chair (2026) and Co-Chair (2025) of the SDG Project Series: Life Below Water.</p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold mb-1">🤝 Sabra Leos &amp; IEEE</h3>
+          <p class="text-sm muted">Club Designer at Sabra Leos (2025 to present) and IEEE member (2026 to present).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="bg-alt">
+      <div class="max-w-6xl mx-auto px-4 py-16 text-center reveal">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="muted mb-8">I'm open to Software Development internships and collaboration. Feel free to reach out.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="mailto:shihariayodya@gmail.com" class="btn-primary">Email Me</a>
+          <a href="https://github.com/YOUR-GITHUB-USERNAME" target="_blank" rel="noopener" class="btn-outline">GitHub</a>
+          <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="py-6 text-center text-sm muted" style="border-top:1px solid var(--border)">
+    © <span id="year"></span> Shihari Ayodya. Built with HTML, Tailwind CSS &amp; JavaScript.
+  </footer>
+
+  <!-- ============ PROJECT MODAL ============ -->
+  <div id="modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/60"
+       role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="card max-w-lg w-full p-6 relative" style="transform:none">
+      <button id="modal-close" aria-label="Close" class="absolute top-3 right-4 text-2xl">&times;</button>
+      <h3 id="modal-title" class="text-2xl font-bold mb-3 pr-6"></h3>
+      <p id="modal-desc" class="muted mb-4"></p>
+      <div id="modal-tech" class="flex flex-wrap gap-2 mb-5"></div>
+      <div class="flex gap-3">
+        <a id="modal-live" href="#" target="_blank" rel="noopener" class="btn-primary">Live Demo</a>
+        <a id="modal-repo" href="#" target="_blank" rel="noopener" class="btn-outline">Source Code</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

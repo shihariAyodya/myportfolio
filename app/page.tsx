@@ -1,69 +1,77 @@
-import Image from "next/image";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Reveal from "../components/Reveal";
+import Skills from "../components/Skills";
+import Journey from "../components/Journey";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+    <>
+      <main
+        id="home"
+        className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden"
+      >
+        {/* soft glow blobs in the background */}
+        <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-rose-dull/20 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-rose-dull/10 blur-3xl" />
+
+        <div className="relative z-10 flex flex-col-reverse md:flex-row items-center gap-12 max-w-5xl pt-20">
+          {/* text side */}
+          <div className="text-center md:text-left">
+            <span className="inline-block rounded-full border border-rose-dull/40 px-4 py-1 text-sm text-rose-dull">
+              Open to internships
+            </span>
+
+            <p className="text-lg text-zinc-400 mt-6">Hello, I'm</p>
+            <h1 className="text-5xl md:text-7xl font-bold mt-2 bg-linear-to-r from-rose-dull to-rose-dull-light bg-clip-text text-transparent">
+              Shihari Ayodya
+            </h1>
+            <h2 className="text-xl md:text-2xl text-zinc-300 mt-4">
+              Software Developer | Data Enthusiast
+            </h2>
+            <p className="text-zinc-400 mt-4 max-w-md">
+              I build web apps and turn data into useful insights.
+            </p>
+
+            <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
+              <a
+                href="#projects"
+                className="rounded-full bg-rose-dull px-6 py-3 font-medium text-zinc-900 hover:bg-rose-dull-light hover:-translate-y-0.5 transition"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-rose-dull px-6 py-3 font-medium text-rose-dull hover:bg-rose-dull hover:text-zinc-900 transition"
+              >
+                Contact Me
+              </a>
+            </div>
+          </div>
+
+          {/* avatar side */}
+          <div className="flex h-56 w-56 md:h-72 md:w-72 shrink-0 items-center justify-center rounded-full border-2 border-rose-dull/50 bg-zinc-800 text-6xl font-bold text-rose-dull shadow-[0_0_60px_rgba(192,132,151,0.3)]">
+            SA
+          </div>
         </div>
       </main>
-    </div>
+
+     <Reveal>
+  <About />
+</Reveal>
+<Reveal>
+  <Skills />
+</Reveal>
+<Reveal>
+  <Journey />
+</Reveal>
+<Reveal>
+  <Projects />
+</Reveal>
+<Reveal>
+  <Contact />
+</Reveal>
+    </>
   );
 }

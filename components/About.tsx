@@ -5,6 +5,7 @@ import {
   FaDownload,
   FaEnvelope,
 } from "react-icons/fa";
+import SectionTitle from "./SectionTitle";
 
 const stats = [
   { icon: FaRocket, value: "5+", label: "Projects" },
@@ -18,13 +19,7 @@ export default function About() {
       id="about"
       className="w-full min-h-screen px-8 pt-28 pb-16 max-w-5xl mx-auto"
     >
-      <p className="text-sm uppercase tracking-widest text-zinc-500">
-        Get to know me
-      </p>
-      <h2 className="text-4xl font-bold text-zinc-100 mt-2">
-        About <span className="text-rose-dull">Me</span>
-      </h2>
-      <div className="h-1 w-16 rounded-full bg-rose-dull mt-4 mb-10" />
+      <SectionTitle title="About" />
 
       <div className="grid gap-10 md:grid-cols-[300px_1fr] items-center">
         {/* photo card (placeholder until you add your photo) */}

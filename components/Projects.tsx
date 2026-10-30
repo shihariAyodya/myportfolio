@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import SectionTitle from "./SectionTitle";
 
 const projects = [
   {
@@ -47,15 +48,9 @@ export default function Projects() {
       id="projects"
       className="w-full min-h-screen px-8 pt-28 pb-16 max-w-5xl mx-auto"
     >
-      <p className="text-sm uppercase tracking-widest text-zinc-500">
-        My work
-      </p>
-      <h2 className="text-4xl font-bold text-zinc-100 mt-2">
-        Featured <span className="text-rose-dull">Projects</span>
-      </h2>
-      <div className="h-1 w-16 rounded-full bg-rose-dull mt-4 mb-8" />
+      <SectionTitle title="Projects" />
 
-      <div className="flex gap-3 mb-10">
+      <div className="flex justify-center gap-3 mb-10">
         {filters.map((f) => (
           <button
             key={f}

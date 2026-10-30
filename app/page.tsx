@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 import Reveal from "../components/Reveal";
 import Skills from "../components/Skills";
 import Journey from "../components/Journey";
+import Highlights from "../components/Highlights";
 
 export default function Home() {
   return (
@@ -65,6 +66,9 @@ export default function Home() {
 </Reveal>
 <Reveal>
   <Journey />
+</Reveal>
+<Reveal>
+  <Highlights />
 </Reveal>
 <Reveal>
   <Projects />

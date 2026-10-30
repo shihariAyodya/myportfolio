@@ -3,8 +3,9 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Reveal from "../components/Reveal";
 import Skills from "../components/Skills";
-import Journey from "../components/Journey";
+//import Journey from "../components/Journey";
 import Highlights from "../components/Highlights";
+import Image from "next/image"; // Fixed: Import Next.js Image component
 
 export default function Home() {
   return (
@@ -50,32 +51,36 @@ export default function Home() {
               </a>
             </div>
           </div>
-
-          {/* avatar side */}
-          <div className="flex h-56 w-56 md:h-72 md:w-72 shrink-0 items-center justify-center rounded-full border-2 border-rose-dull/50 bg-zinc-800 text-6xl font-bold text-rose-dull shadow-[0_0_60px_rgba(192,132,151,0.3)]">
-            SA
+      
+          {/* avatar side - Fixed className placeholder */}
+          <div className="relative overflow-hidden flex h-56 w-56 md:h-72 md:w-72 rounded-full shadow-lg">
+            <Image
+              src="/avatar.jpg"
+              alt="Shihari Ayodya"
+              fill
+              sizes="(min-width: 768px) 288px, 224px"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </main>
 
-     <Reveal>
-  <About />
-</Reveal>
-<Reveal>
-  <Skills />
-</Reveal>
-<Reveal>
-  <Journey />
-</Reveal>
-<Reveal>
-  <Highlights />
-</Reveal>
-<Reveal>
-  <Projects />
-</Reveal>
-<Reveal>
-  <Contact />
-</Reveal>
+      <Reveal>
+        <About />
+      </Reveal>
+      <Reveal>
+        <Skills />
+      </Reveal>
+      <Reveal>
+        <Highlights />
+      </Reveal>
+      <Reveal>
+        <Projects />
+      </Reveal>
+      <Reveal>
+        <Contact />
+      </Reveal>
     </>
   );
 }

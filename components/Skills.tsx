@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const skillGroups = [
   {
     title: "Web Development",
@@ -32,24 +34,25 @@ export default function Skills() {
       <div className="h-1 w-16 rounded-full bg-rose-dull mt-4 mb-10" />
 
       <div className="grid gap-6 md:grid-cols-2">
-        {skillGroups.map((group) => (
-          <div
-            key={group.title}
-            className="rounded-2xl border border-zinc-800 bg-zinc-800/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-rose-dull/60 hover:shadow-[0_10px_40px_rgba(192,132,151,0.2)]"
-          >
-            <h3 className="text-xl font-bold text-rose-dull">{group.title}</h3>
+        {skillGroups.map((group, i) => (
+          <Reveal key={group.title} delay={i * 120}>
+            <div className="h-full rounded-2xl border border-zinc-800 bg-zinc-800/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-rose-dull/60 hover:shadow-[0_10px_40px_rgba(192,132,151,0.2)]">
+              <h3 className="text-xl font-bold text-rose-dull">
+                {group.title}
+              </h3>
 
-            <div className="flex flex-wrap gap-2 mt-5">
-              {group.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full bg-zinc-900 border border-zinc-700 px-4 py-1.5 text-sm text-zinc-300 hover:border-rose-dull hover:text-rose-dull transition"
-                >
-                  {skill}
-                </span>
-              ))}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-full bg-zinc-900 border border-zinc-700 px-4 py-1.5 text-sm text-zinc-300 hover:border-rose-dull hover:text-rose-dull transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

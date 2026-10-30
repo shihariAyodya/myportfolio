@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Reveal({ children }: { children: React.ReactNode }) {
+export default function Reveal({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -27,6 +33,7 @@ export default function Reveal({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
       className={`transition duration-700 ease-out motion-reduce:transition-none ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}

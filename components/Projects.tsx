@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Reveal from "./Reveal";
 
 const projects = [
   {
@@ -44,7 +45,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen px-8 pt-28 pb-16 max-w-5xl mx-auto"
+      className="w-full min-h-screen px-8 pt-28 pb-16 max-w-5xl mx-auto"
     >
       <p className="text-sm uppercase tracking-widest text-zinc-500">
         My work
@@ -71,27 +72,28 @@ export default function Projects() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {visible.map((p) => (
-          <div
-            key={p.title}
-            className="group rounded-2xl border border-zinc-800 border-t-2 border-t-rose-dull bg-zinc-800/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-rose-dull/60 hover:shadow-[0_10px_40px_rgba(192,132,151,0.2)]"
-          >
-            <h3 className="text-xl font-bold text-zinc-100 group-hover:text-rose-dull transition">
-              {p.title}
-            </h3>
-            <p className="text-zinc-400 mt-3 leading-relaxed">{p.description}</p>
+        {visible.map((p, i) => (
+          <Reveal key={p.title} delay={i * 120}>
+            <div className="group h-full rounded-2xl border border-zinc-800 border-t-2 border-t-rose-dull bg-zinc-800/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-rose-dull/60 hover:shadow-[0_10px_40px_rgba(192,132,151,0.2)]">
+              <h3 className="text-xl font-bold text-zinc-100 group-hover:text-rose-dull transition">
+                {p.title}
+              </h3>
+              <p className="text-zinc-400 mt-3 leading-relaxed">
+                {p.description}
+              </p>
 
-            <div className="flex flex-wrap gap-2 mt-5">
-              {p.tags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full bg-rose-dull/10 px-3 py-1 text-xs text-rose-dull"
-                >
-                  {t}
-                </span>
-              ))}
+              <div className="flex flex-wrap gap-2 mt-5">
+                {p.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-rose-dull/10 px-3 py-1 text-xs text-rose-dull"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaBriefcase,
   FaRocket,
@@ -22,10 +23,14 @@ export default function About() {
       <SectionTitle title="About" />
 
       <div className="grid gap-10 md:grid-cols-[300px_1fr] items-center">
-        {/* photo card (placeholder until you add your photo) */}
-        <div className="flex aspect-[4/5] w-full max-w-xs mx-auto md:mx-0 items-center justify-center rounded-3xl border border-rose-dull/40 bg-zinc-800 text-7xl font-bold text-rose-dull shadow-[0_0_60px_rgba(192,132,151,0.2)]">
-          SA
-        </div>
+        {/* photo card */}
+        <Image
+          src="/shihari.jpeg"
+          alt="Shihari Ayodya"
+          width={300}
+          height={375}
+          className="aspect-[4/5] w-full max-w-xs mx-auto md:mx-0 rounded-3xl border border-rose-dull/40 object-cover object-top shadow-[0_0_60px_rgba(192,132,151,0.2)]"
+        />
 
         {/* text side */}
         <div>

@@ -6,10 +6,10 @@ const links = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Journey", href: "#journey" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
   { name: "Highlights", href: "#highlights" },
+  { name: "Journey", href: "#journey" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -17,21 +17,40 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = links
-      .map((l) => document.getElementById(l.href.slice(1)))
-      .filter((el): el is HTMLElement => el !== null);
+    const ids = links.map((l) => l.href.slice(1));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
+    const onScroll = () => {
+      const line = window.innerHeight * 0.4;
+      let current = ids[0];
+      let bestTop = -Infinity;
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+      // pick the section whose top is closest to (but above) the line
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top <= line && top > bestTop) {
+          bestTop = top;
+          current = id;
+        }
+      }
+
+      // at the very bottom of the page, highlight Contact
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 4;
+      if (atBottom) current = "contact";
+
+      setActive(current);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (

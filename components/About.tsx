@@ -9,9 +9,9 @@ import {
 import SectionTitle from "./SectionTitle";
 
 const stats = [
-  { icon: FaRocket, value: "5+", label: "Projects" },
+  { icon: FaRocket, value: "6", label: "Projects" },
   { icon: FaBriefcase, value: "2", label: "Focus Areas" },
-  { icon: FaGraduationCap, value: "IT", label: "Undergraduate" },
+  { icon: FaGraduationCap, value: "IS", label: "Undergraduate" },
 ];
 
 export default function About() {
@@ -39,16 +39,17 @@ export default function About() {
           </h3>
 
           <p className="text-zinc-400 leading-relaxed mt-4">
-            I am studying Information Technology at the Faculty of Computing,
-            Sabaragamuwa University of Sri Lanka. I enjoy building full-stack
-            web apps with React and Flask, and I also like turning data into
-            useful insights using Python, MySQL and Power BI.
+            I am an Information Systems undergraduate at the Faculty of
+            Computing, Sabaragamuwa University of Sri Lanka, specializing in
+            data analytics. I build interactive Power BI dashboards and analyze
+            data with SQL and Python, and I also enjoy building web apps with
+            React and Flask.
           </p>
           <p className="text-zinc-400 leading-relaxed mt-4">
-            My projects include Scholar Track, a pet adoption platform, a
-            crochet shop and a Sri Lanka tourism data analysis. I am looking
-            for internship opportunities where I can learn, contribute and grow
-            as a developer and data analyst.
+            My projects include a Sri Lanka tourism data analysis, sales
+            dashboards, Scholar Track, PetCare.lk and a crochet business
+            showcase. I am looking for an internship where I can turn data into
+            clear insights and keep growing as a developer and data analyst.
           </p>
 
           <div className="border-t border-zinc-700 mt-6 pt-6 grid gap-4 sm:grid-cols-3">

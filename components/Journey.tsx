@@ -3,35 +3,38 @@
 import { useState } from "react";
 import SectionTitle from "./SectionTitle";
 
-const tabs = {
+type Entry = {
+  title: string;
+  place: string;
+  period?: string;
+  note?: string;
+};
+
+const tabs: Record<string, Entry[]> = {
   Education: [
     {
-      title: "BSc in Information Technology",
+      title: "Bachelor of Science in Information Systems",
       place: "Faculty of Computing, Sabaragamuwa University of Sri Lanka",
-      period: "YEAR - Present",
-      note: "Studying software development, data analytics and enterprise architecture.",
+      period: "07/2024 – 07/2028",
+      note: "Specializing in Data Analytics.",
     },
     {
-      title: "Advanced Level / School",
-      place: "YOUR SCHOOL NAME",
-      period: "YEAR - YEAR",
-      note: "",
+      title: "G.C.E. Advanced Level, Physical Science Stream",
+      place: "Bandarawela Central College",
+      period: "2022 (23)",
     },
   ],
   Experience: [
     {
-      title: "Personal & Academic Projects",
-      place: "Scholar Track, Pet Adoption & Care, Crochet Shop, Tourism Analysis",
-      period: "YEAR - Present",
-      note: "Built full-stack web apps and data analysis projects on my own and with teammates.",
+      title: "Founder, Handmade Crochet Small Business",
+      place: "Independent business",
+      note: "Ran the business from product design to customer service, and used a Facebook page to market products, answer customer questions and drive sales.",
     },
   ],
 };
 
-type TabName = keyof typeof tabs;
-
 export default function Journey() {
-  const [active, setActive] = useState<TabName>("Education");
+  const [active, setActive] = useState("Education");
 
   return (
     <section
@@ -41,7 +44,7 @@ export default function Journey() {
       <SectionTitle title="Journey" />
 
       <div className="flex justify-center gap-3 mb-10">
-        {(Object.keys(tabs) as TabName[]).map((name) => (
+        {Object.keys(tabs).map((name) => (
           <button
             key={name}
             onClick={() => setActive(name)}
@@ -61,7 +64,9 @@ export default function Journey() {
           <div key={item.title} className="relative">
             <span className="absolute -left-[41px] top-1.5 h-4 w-4 rounded-full bg-rose-dull shadow-[0_0_12px_rgba(192,132,151,0.6)]" />
 
-            <p className="text-sm text-rose-dull">{item.period}</p>
+            {item.period && (
+              <p className="text-sm text-rose-dull">{item.period}</p>
+            )}
             <h3 className="text-xl font-bold text-zinc-100 mt-1">
               {item.title}
             </h3>

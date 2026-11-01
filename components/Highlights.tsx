@@ -8,37 +8,65 @@ import SectionTitle from "./SectionTitle";
 type Item = {
   title: string;
   org: string;
-  year: string;
+  year?: string;
+  note?: string;
   link?: string;
 };
 
 const data: Record<string, Item[]> = {
   Certificates: [
     {
-      title: "YOUR CERTIFICATE NAME",
-      org: "ISSUED BY",
-      year: "YEAR",
-      link: "",
+      title: "Power BI Essential Training",
+      org: "LinkedIn Learning",
+      year: "Jun 2026",
     },
     {
-      title: "YOUR CERTIFICATE NAME",
-      org: "ISSUED BY",
-      year: "YEAR",
-      link: "",
+      title: "Data Analytics for Business Professionals",
+      org: "LinkedIn Learning",
+      year: "May 2026",
+    },
+    {
+      title: "Learning Data Analytics: 1 Foundations",
+      org: "LinkedIn Learning",
+      year: "May 2026",
+    },
+    {
+      title: "Front-End Web Development",
+      org: "CODL, University of Moratuwa",
+    },
+    {
+      title: "Python for Beginners",
+      org: "CODL, University of Moratuwa",
     },
   ],
   Volunteering: [
     {
-      title: "YOUR ROLE",
-      org: "ORGANIZATION OR CLUB",
-      year: "YEAR",
+      title: "Club Designer",
+      org: "Rotaract Club of SUSL",
+      year: "2025 – Present",
+      note: "Project Chair (2026) and Co-Chair (2025) of the SDG Project Series: Life Below Water.",
+    },
+    {
+      title: "Club Designer",
+      org: "Sabra Leos",
+      year: "2025 – Present",
+    },
+    {
+      title: "Member",
+      org: "IEEE",
+      year: "2026 – Present",
     },
   ],
   Awards: [
     {
-      title: "YOUR AWARD OR ACHIEVEMENT",
-      org: "EVENT OR ORGANIZATION",
-      year: "YEAR",
+      title: "Top 30, Data Storm 7.0",
+      org: "University of Moratuwa × OCTAVE, John Keells Group",
+      note: "Team WeCodeX placed among the top 30 teams in a 36-hour data science hackathon solving a real-world industry problem.",
+    },
+    {
+      title: "Top 15 Finalist, CryptX 2.0 Hackathon",
+      org: "University of Sri Jayewardenepura, ICT Society",
+      note: "Team WeCodeX was selected among the top 15 finalist teams.",
     },
   ],
 };
@@ -79,11 +107,19 @@ export default function Highlights() {
         {data[active].map((item, i) => (
           <Reveal key={`${active}-${i}`} delay={i * 100}>
             <div className="h-full rounded-2xl border border-zinc-800 border-l-4 border-l-rose-dull bg-zinc-800/60 p-6 transition duration-300 hover:-translate-y-2 hover:border-rose-dull/60 hover:shadow-[0_10px_40px_rgba(192,132,151,0.2)]">
-              <p className="text-sm text-rose-dull">{item.year}</p>
+              {item.year && (
+                <p className="text-sm text-rose-dull">{item.year}</p>
+              )}
               <h3 className="text-xl font-bold text-zinc-100 mt-1">
                 {item.title}
               </h3>
               <p className="text-zinc-400 mt-1">{item.org}</p>
+
+              {item.note && (
+                <p className="text-zinc-500 mt-3 text-sm leading-relaxed">
+                  {item.note}
+                </p>
+              )}
 
               {item.link && (
                 <a

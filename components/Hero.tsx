@@ -6,10 +6,10 @@ import { FaGithub, FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa
 const roles = ["Software Developer", "Data Enthusiast", "Web Developer"];
 
 const socials = [
-  { icon: FaFacebookF, href: "https://facebook.com/your-username", label: "Facebook" },
-  { icon: FaInstagram, href: "https://instagram.com/your-username", label: "Instagram" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com/in/your-username", label: "LinkedIn" },
-  { icon: FaGithub, href: "https://github.com/your-username", label: "GitHub" },
+  { icon: FaFacebookF, href: "https://www.facebook.com/shihari.ayodya/", label: "Facebook" },
+  { icon: FaInstagram, href: "https://www.instagram.com/_shipz._/", label: "Instagram" },
+  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/shihari-ayodya-33406a34b/", label: "LinkedIn" },
+  { icon: FaGithub, href: "https://github.com/shihariAyodya", label: "GitHub" },
 ];
 
 export default function Hero() {

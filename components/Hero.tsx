@@ -47,7 +47,7 @@ export default function Hero() {
     >
       {/* glow blobs */}
       <div className="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-rose-dull/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-rose-dull/10 blur-3xl" />
+      <div className="absolute bottom-32 -right-24 h-96 w-96 rounded-full bg-rose-dull/10 blur-3xl" />
 
       {/* social icons (left side, bigger screens only) */}
       <div className="hidden md:flex absolute left-8 lg:left-12 top-1/2 -translate-y-1/2 flex-col gap-6">

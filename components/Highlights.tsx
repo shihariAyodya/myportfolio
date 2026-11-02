@@ -20,6 +20,7 @@ type Item = {
   note?: string;
   image?: string;
   link?: string;
+  group?: string; // used to split Volunteering into Rotaract / Leo / IEEE
 };
 
 const data: Record<string, Item[]> = {
@@ -45,25 +46,30 @@ const data: Record<string, Item[]> = {
     {
       title: "Front-End Web Development",
       org: "CODL, University of Moratuwa",
+      image: "/FrontendBeginnerCertificate.jpg",
     },
     {
       title: "Python for Beginners",
       org: "CODL, University of Moratuwa",
+      image: "/PythonBeginnerCertificate.jpg",
     },
   ],
   Volunteering: [
     {
+      group: "Rotaract",
       title: "Club Designer",
       org: "Rotaract Club of SUSL",
       year: "2025 – Present",
       note: "Project Chair (2026) and Co-Chair (2025) of the SDG Project Series: Life Below Water.",
     },
     {
+      group: "Leo",
       title: "Club Designer",
       org: "Sabra Leos",
       year: "2025 – Present",
     },
     {
+      group: "IEEE",
       title: "Member",
       org: "IEEE",
       year: "2026 – Present",
@@ -89,6 +95,8 @@ const tabs = [
   { name: "Volunteering", icon: FaHandsHelping },
   { name: "Awards", icon: FaTrophy },
 ];
+
+const volunteerGroups = ["Rotaract", "Leo", "IEEE"];
 
 /* ─── full-size certificate popup ───────────────────────── */
 function ImageModal({
@@ -158,6 +166,12 @@ function ImageModal({
 export default function Highlights() {
   const [active, setActive] = useState("Certificates");
   const [preview, setPreview] = useState<Item | null>(null);
+  const [group, setGroup] = useState(volunteerGroups[0]);
+
+  const items =
+    active === "Volunteering"
+      ? data.Volunteering.filter((item) => item.group === group)
+      : data[active];
 
   return (
     <section
@@ -166,7 +180,11 @@ export default function Highlights() {
     >
       <SectionTitle title="Highlights" />
 
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      <div
+        className={`flex flex-wrap justify-center gap-3 ${
+          active === "Volunteering" ? "mb-5" : "mb-10"
+        }`}
+      >
         {tabs.map(({ name, icon: Icon }) => (
           <button
             key={name}
@@ -182,12 +200,31 @@ export default function Highlights() {
         ))}
       </div>
 
+      {/* Volunteering sub-tabs */}
+      {active === "Volunteering" && (
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {volunteerGroups.map((name) => (
+            <button
+              key={name}
+              onClick={() => setGroup(name)}
+              className={`rounded-full border px-4 py-1.5 text-xs transition ${
+                group === name
+                  ? "border-rose-dull bg-rose-dull/15 text-rose-dull"
+                  : "border-zinc-700 text-zinc-400 hover:border-rose-dull/60 hover:text-rose-dull"
+              }`}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {data[active].map((item, i) => {
+        {items.map((item, i) => {
           const clickable = Boolean(item.image);
 
           return (
-            <Reveal key={`${active}-${i}`} delay={i * 100}>
+            <Reveal key={`${active}-${group}-${i}`} delay={i * 100}>
               <div
                 role={clickable ? "button" : undefined}
                 tabIndex={clickable ? 0 : undefined}

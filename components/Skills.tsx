@@ -45,11 +45,13 @@ interface Category {
 }
 
 /* ─── data ─────────────────────────────────────────────── */
+const PINK = "#c08497";
+
 const categories: Category[] = [
-  { id: "web",     label: "Web Dev",        icon: FaCode,     color: "#c08497" },
-  { id: "backend", label: "Backend & DB",   icon: FaDatabase, color: "#a78bfa" },
-  { id: "data",    label: "Data Analytics", icon: FaChartBar, color: "#34d399" },
-  { id: "tools",   label: "Tools",          icon: FaTools,    color: "#7dd3fc" },
+  { id: "web",     label: "Web Dev",        icon: FaCode,     color: PINK },
+  { id: "backend", label: "Backend & DB",   icon: FaDatabase, color: PINK },
+  { id: "data",    label: "Data Analytics", icon: FaChartBar, color: PINK },
+  { id: "tools",   label: "Tools",          icon: FaTools,    color: PINK },
 ];
 
 const skills: Skill[] = [

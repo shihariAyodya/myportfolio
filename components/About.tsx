@@ -9,7 +9,7 @@ import {
 import SectionTitle from "./SectionTitle";
 
 const stats = [
-  { icon: FaRocket, value: "6", label: "Projects" },
+  { icon: FaRocket, value: "7", label: "Projects" },
   { icon: FaBriefcase, value: "2", label: "Focus Areas" },
   { icon: FaGraduationCap, value: "IS", label: "Undergraduate" },
 ];
@@ -47,7 +47,7 @@ export default function About() {
           </p>
           <p className="text-zinc-400 leading-relaxed mt-4">
             My projects include a Sri Lanka tourism data analysis, sales
-            dashboards, Scholar Track, PetCare.lk and a crochet business
+            dashboards, Scholar Track, Petzy and a crochet business
             showcase. I am looking for an internship where I can turn data into
             clear insights and keep growing as a developer and data analyst.
           </p>
